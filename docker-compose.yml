@@ -5,7 +5,7 @@ services:
   web:
     image: php:8.1-apache
     volumes:
-      - ./src:/var/www/html # Assuming your PHP code is in a src/ directory locally
+      - ./:/var/www/html
     ports:
       - "8081:80"
     depends_on:

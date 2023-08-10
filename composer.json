@@ -1,6 +1,7 @@
 {
 	"require": {
-		"automattic/stream-builder": "^0.8.1"
+		"automattic/stream-builder": "^0.8.1",
+		"guzzlehttp/guzzle": "^7.0"
 	},
 	"autoload": {
 		"psr-4": {
