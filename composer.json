@@ -1,7 +1,8 @@
 {
 	"require": {
 		"automattic/stream-builder": "^0.8.1",
-		"guzzlehttp/guzzle": "^7.0"
+		"guzzlehttp/guzzle": "^7.0",
+		"jenssegers/blade": "^1.4"
 	},
 	"autoload": {
 		"psr-4": {

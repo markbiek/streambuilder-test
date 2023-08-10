@@ -8,11 +8,14 @@ use Tumblr\StreamBuilder\TransientCacheProvider;
 use Tumblr\StreamBuilder\StreamSerializer;
 use Tumblr\StreamBuilder\TemplateProvider;
 use Tumblr\StreamBuilder\StreamContext;
+use Jenssegers\Blade\Blade;
 
 use SbTest\InterfaceImplementations\Credentials;
 use SbTest\InterfaceImplementations\ContextProvider;
 use SbTest\InterfaceImplementations\StreamBuilderLog;
 use SbTest\Streams\EarthquakeStream;
+
+$blade = new Blade('views', 'cache');
 
 $dependency_bag = new DependencyBag( 
 	new StreamBuilderLog(),
@@ -33,6 +36,6 @@ $stream = StreamSerializer::from_template(new StreamContext(
 ));
 $results = $stream->enumerate(10);
 
-echo '<pre>' . print_r($results, true) . '</pre>';
+echo $blade->make('home', ['results' => $results])->render();
 
 echo '<hr />done';
