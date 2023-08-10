@@ -36,6 +36,6 @@ $stream = StreamSerializer::from_template(new StreamContext(
 ));
 $results = $stream->enumerate(10);
 
-echo $blade->make('home', ['results' => $results])->render();
+echo $blade->make('home', ['earthquakes' => $results->get_elements()])->render();
 
 echo '<hr />done';

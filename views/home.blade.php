@@ -9,10 +9,11 @@
 <head>
 </head>
 <body>
+	<h1>All Earthquakes in the past week</h1>
 	<ul>
-		@foreach( $results->get_elements() as $element )
+		@foreach( $earthquakes as $earthquake )
 			<li>
-				{{ $element }}
+				{{ $earthquake }}
 			</li>
 		@endforeach
 	</ul>

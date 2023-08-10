@@ -32,8 +32,7 @@ class EarthquakeStream extends Stream {
         $earthquakes = self::get_earthquakes();
         $elements = [];
         foreach ($earthquakes as $earthquake) {
-			$earthquake_details = $earthquake['properties']['title'];
-            $elements[] = new EarthquakeStreamElement($earthquake_details, $this->get_identity(), $cursor);
+            $elements[] = new EarthquakeStreamElement($earthquake, $this->get_identity(), $cursor);
         }
         return new StreamResult(true, $elements);
     }
