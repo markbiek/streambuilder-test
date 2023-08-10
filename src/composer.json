@@ -1,5 +1,10 @@
 {
-    "require": {
-        "automattic/stream-builder": "^0.8.1"
-    }
+	"require": {
+		"automattic/stream-builder": "^0.8.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"SbTest\\": "src/"
+		}
+	}
 }
