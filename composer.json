@@ -1,0 +1,5 @@
+{
+    "require": {
+        "automattic/stream-builder": "^0.8.1"
+    }
+}
