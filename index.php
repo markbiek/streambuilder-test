@@ -48,5 +48,6 @@ $next_cursor_string = \Tumblr\StreamBuilder\StreamCursors\StreamCursor::encode($
 
 echo $blade->make( 'home', array(
 	'earthquakes' => $results,
-	'cursor' => $next_cursor_string,
+	'next_cursor' => $next_cursor_string,
+	'filter'      => $_GET['filter'] ?? 'all'
 ) )->render();
