@@ -33,10 +33,10 @@ if ( is_string( $cursor ) ) {
     $cursor = null;
 }
 
-$template = 'awesome_trending.20230811';
+$template = 'awesome_earthquakes.20230811';
 $meta = [];
 $stream = StreamSerializer::from_template( new StreamContext(
-   TemplateProvider::get_template( 'trending', $template ),
+   TemplateProvider::get_template( 'earthquakes', $template ),
    $meta,
    StreamBuilder::getDependencyBag()->getCacheProvider(),
    $template

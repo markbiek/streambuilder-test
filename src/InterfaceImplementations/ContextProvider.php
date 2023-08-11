@@ -32,7 +32,7 @@ class ContextProvider implements \Tumblr\StreamBuilder\Interfaces\ContextProvide
     public function getContextProvider(): array
     {
         return [
-            'trending' => 'Templates/Trending',
+            'earthquakes' => 'Templates/Earthquakes',
         ];
     }
 
