@@ -33,7 +33,7 @@ if ( is_string( $cursor ) ) {
     $cursor = null;
 }
 
-$template = 'awesome_earthquakes.20230811';
+$template = 'default.20230811';
 $meta = [];
 $stream = StreamSerializer::from_template( new StreamContext(
    TemplateProvider::get_template( 'earthquakes', $template ),
