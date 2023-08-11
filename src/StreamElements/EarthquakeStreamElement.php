@@ -49,7 +49,11 @@ class EarthquakeStreamElement extends LeafStreamElement {
         return $base;
     }
 
-	public function get_url() {
+	public function get_url(): string {
 		return $this->earthquake['properties']['url'];
+	}
+
+	public function get_magnitude(): float {
+		return $this->earthquake['properties']['mag'];
 	}
 }
