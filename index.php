@@ -26,16 +26,27 @@ $dependency_bag = new DependencyBag(
 
 StreamBuilder::init( $dependency_bag );
 
+$cursor = $_REQUEST['cursor'] ?? null;
+if ( is_string( $cursor ) ) {
+    $cursor = \Tumblr\StreamBuilder\StreamCursors\StreamCursor::decode( $cursor, ['secret'], ['key'] );
+} else {
+    $cursor = null;
+}
+
 $template = 'awesome_trending.20230811';
 $meta = [];
-$stream = StreamSerializer::from_template(new StreamContext(
-   TemplateProvider::get_template('trending', $template),
+$stream = StreamSerializer::from_template( new StreamContext(
+   TemplateProvider::get_template( 'trending', $template ),
    $meta,
    StreamBuilder::getDependencyBag()->getCacheProvider(),
    $template
-));
-$results = $stream->enumerate(10);
+) );
+$results = $stream->enumerate( 25, $cursor )->get_elements();
 
-echo $blade->make('home', ['earthquakes' => $results->get_elements()])->render();
+$last_cursor = end( $results )->get_cursor();
+$next_cursor_string = \Tumblr\StreamBuilder\StreamCursors\StreamCursor::encode($last_cursor, 'secret', 'key');
 
-echo '<hr />done';
+echo $blade->make( 'home', array(
+	'earthquakes' => $results,
+	'cursor' => $next_cursor_string,
+) )->render();

@@ -10,6 +10,10 @@
 </head>
 <body>
 	<h1>All Earthquakes in the past week</h1>
+	<p>
+		<a href="/">Home</a>
+		<a href="/?cursor={{ $cursor }}">Next Page</a>	
+	</p>
 	<ul>
 		@foreach( $earthquakes as $earthquake )
 			<li>
