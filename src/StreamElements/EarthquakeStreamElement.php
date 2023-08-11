@@ -48,4 +48,8 @@ class EarthquakeStreamElement extends LeafStreamElement {
         $base['earthquake'] = $this->earthquake;
         return $base;
     }
+
+	public function get_url() {
+		return $this->earthquake['properties']['url'];
+	}
 }

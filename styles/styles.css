@@ -1,0 +1,51 @@
+@import 'fonts.css';
+
+:root {
+	--primary-font-family: 'National Park', serif;
+	--color-black: #16161d;
+	--color-white: #ffffff;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 18px;
+	font-family: var(--primary-font-family);
+	color: var(--color-black);
+}
+
+h1 {
+	font-size: 28px;
+}
+
+main {
+	width: 75vw;
+	margin: 0 auto;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+ul.earthquakes {
+	width: 100%;
+}
+
+ul.earthquakes li {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding-bottom: 0.5rem;
+}
+
+.details-link {
+	font-size: 0.8rem;
+}
