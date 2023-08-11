@@ -11,7 +11,7 @@
 <body>
 	<main>
 		<h1>All Earthquakes in the past week</h1>
-		<p>Pulled from the <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson">USGS Earthquake feed</a>.</p>
+		<p>Pulled from the <a href="https://earthquake.usgs.gov/fdsnws/event/1/">USGS Earthquake feed</a>.</p>
 		<nav>
 			<ul>
 				<li> <a href="/">Home</a> </li>
