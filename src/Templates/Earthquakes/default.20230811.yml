@@ -7,8 +7,12 @@ injector:
   inner:
     _type: SbTest\Streams\AdStream
 stream:
-  _type: Tumblr\StreamBuilder\Streams\CursorlessFilteredStream
-  stream:
-    _type: SbTest\Streams\EarthquakeStream
-  stream_filter:
-    _type: SbTest\Filters\LargeEarthquakeStreamFilter
+  _type: Tumblr\StreamBuilder\Streams\RankedStream
+  ranker: 
+    _type: SbTest\Rankers\MagnitudeRanker
+  inner:
+    _type: Tumblr\StreamBuilder\Streams\CursorlessFilteredStream
+    stream:
+      _type: SbTest\Streams\EarthquakeStream
+    stream_filter:
+      _type: SbTest\Filters\LargeEarthquakeStreamFilter
