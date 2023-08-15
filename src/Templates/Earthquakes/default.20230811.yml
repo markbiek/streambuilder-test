@@ -1,5 +1,14 @@
-_type: Tumblr\StreamBuilder\Streams\CursorlessFilteredStream
+_type: Tumblr\StreamBuilder\Streams\InjectedStream
+injector:
+  _type: Tumblr\StreamBuilder\StreamInjectors\GeneralStreamInjector
+  allocator:
+    _type: Tumblr\StreamBuilder\InjectionAllocators\GlobalFixedInjectionAllocator
+    positions: [0, 5, 10]
+  inner:
+    _type: SbTest\Streams\AdStream
 stream:
-  _type: SbTest\Streams\EarthquakeStream
-stream_filter:
-  _type: SbTest\Filters\LargeEarthquakeStreamFilter
+  _type: Tumblr\StreamBuilder\Streams\CursorlessFilteredStream
+  stream:
+    _type: SbTest\Streams\EarthquakeStream
+  stream_filter:
+    _type: SbTest\Filters\LargeEarthquakeStreamFilter

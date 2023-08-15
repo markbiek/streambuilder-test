@@ -1,5 +1,7 @@
 <?php
 
+error_reporting( E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED );
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Tumblr\StreamBuilder\DependencyBag;
@@ -44,7 +46,7 @@ $stream = StreamSerializer::from_template( new StreamContext(
 $results = $stream->enumerate( 25, $cursor )->get_elements();
 
 $last_cursor = end( $results )->get_cursor();
-$next_cursor_string = \Tumblr\StreamBuilder\StreamCursors\StreamCursor::encode($last_cursor, 'secret', 'key');
+$next_cursor_string = $last_cursor ? \Tumblr\StreamBuilder\StreamCursors\StreamCursor::encode($last_cursor, 'secret', 'key') : '';
 
 echo $blade->make( 'home', array(
 	'earthquakes' => $results,

@@ -13,7 +13,7 @@
 		<h1>All Earthquakes in the past week</h1>
 		<p>Pulled from the <a href="https://earthquake.usgs.gov/fdsnws/event/1/">USGS Earthquake feed</a>.</p>
 		<nav>
-			<ul>
+		<ul>
 				<li> <a href="/">Home</a> </li>
 				<li> <a href="/?filter=large">Hide small earthquakes</a> </li>
 				<li> <a href="/?cursor={{ $next_cursor }}&filter={{ $filter }}">Next Page</a>	</li>
@@ -21,9 +21,11 @@
 		</nav>
 		<ul class="earthquakes">
 			@foreach( $earthquakes as $earthquake )
-				<li>
+				<li class=@if ( ! $earthquake->get_original_element()->is_ad() ) "earthquake" @else "ad" @endif>
 					<div>{{ $earthquake }}</div>
-					<div><a href="{{ $earthquake->get_original_element()->get_url() }}" target="_blank" class="details-link">(Details)</a></div>
+					@if ( ! $earthquake->get_original_element()->is_ad() )
+						<div><a href="{{ $earthquake->get_original_element()->get_url() }}" target="_blank" class="details-link">(Details)</a></div>
+					@endif
 				</li>
 			@endforeach
 		</ul>
