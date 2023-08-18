@@ -2,7 +2,8 @@
 	"require": {
 		"automattic/stream-builder": "^0.8.1",
 		"guzzlehttp/guzzle": "^7.0",
-		"jenssegers/blade": "^1.4"
+		"jenssegers/blade": "^1.4",
+		"vlucas/phpdotenv": "^5.5"
 	},
 	"autoload": {
 		"psr-4": {

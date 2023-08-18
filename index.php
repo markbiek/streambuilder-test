@@ -17,6 +17,9 @@ use SbTest\InterfaceImplementations\ContextProvider;
 use SbTest\InterfaceImplementations\StreamBuilderLog;
 use SbTest\Streams\EarthquakeStream;
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 $blade = new Blade('views', 'cache');
 
 $dependency_bag = new DependencyBag( 
