@@ -10,8 +10,7 @@ use Tumblr\StreamBuilder\StreamTracers\StreamTracer;
 use Tumblr\StreamBuilder\StreamContext;
 use GuzzleHttp\Client;
 
-use SbTest\StreamElements\EarthquakeStreamElement;
-use SbTest\Cursors\EarthquakeStreamCursor;
+use SbTest\StreamElements\CatFactStreamElement;
 
 class CatFactStream extends Stream {
 	public function __construct() {
